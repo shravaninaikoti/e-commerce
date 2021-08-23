@@ -13,7 +13,8 @@ export class ShopComponent implements OnInit {
     
   }
   v(){
-    console.log('product view');
+   
+      
   }
 
 }
