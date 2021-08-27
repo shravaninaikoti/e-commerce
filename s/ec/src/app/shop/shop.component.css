@@ -4,8 +4,3 @@
 .g-3, .gy-3 {
     --bs-gutter-y: 1rem;
 }
-body { 
-    padding-top: 65px; 
-}
-.small{
-    font-weight: bold;}

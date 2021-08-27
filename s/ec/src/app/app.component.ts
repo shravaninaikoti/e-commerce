@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'client';
+  title = 'Seneca Sells';
   constructor(private http: HttpClient){}
   ngOnInit(): void {
     this.http.get('https://localhost:5001/api/products?paheSize=50').subscribe((Response:any)=>{

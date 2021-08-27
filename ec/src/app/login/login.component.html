@@ -1,34 +1,37 @@
-<body class="text-center" style="align-content: center;">
+<body >
     
-    <main class="form-signin">
-      <form>
-        
-        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-    
-        <div class="form-floating">
-            <label for="floatingInput">Email address</label>
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-          
-        </div>
-        <div class="form-floating">
-            <label for="floatingPassword">Password</label>
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-          
-        </div>
-    
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <div class="form-floating">
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-        </div>
-      </form>
-    </main>
-    
-    
-        
+  <main class="form-signin">
+    <form [formGroup]="loginform">
+      
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+  
+      <div class="form-floating">
+        <label for="floatingInput" style="text-align: left;">Email address</label>
+        <input type="email" class="form-control" formControlName="email" id="floatingInput" placeholder="name@example.com" name="mailid" [(ngModel)]="mailid">
+        <span class="error" style="color: red;" *ngIf="email.invalid && email.touched">*email invalid*</span>
+              </div>
+
+      <div class="form-floating">
+        <label for="floatingPassword" >Password</label>
+        <input type="password" class="form-control" formControlName="pass" id="floatingPassword" placeholder="password" name="password" [(ngModel)]="password">
+        <span class="error" style="color: red;" *ngIf="pass.invalid && pass.touched">*password invalid*</span>
+        <span class="error" style="color: red;" *ngIf="user==2 && !pass.invalid">*incorrect credentials*</span>
+
+      </div>
+  
+        <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="Loginuser()" >Login</button>
+      
+      <br>
+      <br>
+     <button class="w-100 btn btn-lg btn-primary" type="submit"  *ngIf="user==1" routerLink="/shop">Shop</button>
+    </form>
+  </main>
+  
+  
       
     
-    </body>
+  
+  </body>
+    
+        
+  
